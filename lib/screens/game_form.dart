@@ -155,7 +155,6 @@ class GameForm extends ConsumerWidget {
         callback: () {
           _formKey.currentState.save();
           if (_formKey.currentState.validate()) {
-            print(_formKey.currentState.value);
             var formstate = _formKey.currentState.value;
             ref.read(pregameProvider.notifier).insertForm(
                   formstate['timer'],
@@ -172,8 +171,6 @@ class GameForm extends ConsumerWidget {
                 },
               ),
             );
-          } else {
-            print("validation failed");
           }
         },
       ),

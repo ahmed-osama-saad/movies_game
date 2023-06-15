@@ -1,12 +1,12 @@
 import 'package:aflam/constants/strings.dart';
+import 'package:aflam/models/providers.dart';
+import 'package:aflam/screens/game_form.dart';
+import 'package:aflam/widgets/categories_list.dart';
 import 'package:aflam/widgets/form_button.dart';
+import 'package:aflam/widgets/mode_selector.dart';
 import 'package:aflam/widgets/my_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/providers.dart';
-import '../widgets/categories_list.dart';
-import '../widgets/mode_selector.dart';
-import 'game_form.dart';
 
 class MyHomePage extends ConsumerWidget {
   MyHomePage({Key key, this.title});
