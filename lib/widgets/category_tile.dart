@@ -4,17 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
-// final stateStateProvider = StateProvider.autoDispose.family<bool, String>((ref, title) {
-//     return (ref.watch(pregameProvider).categories.contains(title));
-//   });
-
 class CategoryTile extends ConsumerWidget {
   CategoryTile(this.index, this.category);
   final num index;
   final GameCategories category;
 
   Widget build(BuildContext context, WidgetRef ref) {
-    // final state = watch(stateStateProvider(title)).state;
     final preGame = ref.watch(pregameProvider);
     final state = preGame.categories.contains(category);
     return GestureDetector(
@@ -46,11 +41,9 @@ class CategoryTile extends ConsumerWidget {
                 toggleColor: category.color,
                 onToggle: (value) {
                   if (!state) {
-                    ref.read(pregameProvider.notifier)
-                        .addCategory(category);
+                    ref.read(pregameProvider.notifier).addCategory(category);
                   } else {
-                    ref.read(pregameProvider.notifier)
-                        .removeCategory(category);
+                    ref.read(pregameProvider.notifier).removeCategory(category);
                   }
                 },
                 value: state,

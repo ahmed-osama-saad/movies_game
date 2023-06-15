@@ -35,7 +35,6 @@ class _BottomSheetConsumer extends ConsumerWidget {
             builder: (context) => TurnScreen(),
           ),
         );
-        // }
       },
       buttonColor: Color.fromARGB(255, 112, 230, 191),
       title: 'Next ${game.teams[game.nextTeam].name}',

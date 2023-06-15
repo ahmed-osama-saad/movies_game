@@ -24,9 +24,6 @@ class DatabaseHelper {
 
   // this opens the database (and creates it if it doesn't exist)
   _initDatabase() async {
-    // Directory documentsDirectory = await getApplicationDocumentsDirectory();
-    // String path = join(documentsDirectory.path, _databaseName);
-
     var databasesPath = await getDatabasesPath();
     var path = join(databasesPath, _databaseName);
     // delete existing if any

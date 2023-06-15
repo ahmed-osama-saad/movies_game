@@ -137,7 +137,6 @@ class GameNotifier extends StateNotifier<Game> {
     for (var i = 0; i < numberOfTeams; i++) {
       teamList[i] = Team(
           '${colorsMap.keys.elementAt(i)}', 0, colorsMap.values.elementAt(i));
-      // print('teeeem ${teamList[i].name}');
     }
     state = Game.clone(state, teams: teamList);
     print(state.teams);
@@ -147,12 +146,10 @@ class GameNotifier extends StateNotifier<Game> {
     var newTeams = state.teams;
     newTeams.add(team);
     state = Game.clone(state, teams: newTeams);
-    // print('add team ${state.teams}');
   }
 
   removeTeam(int index) {
     var newTeams = state.teams;
-    // print('remove team ${state.teams[index].name}');
     newTeams.removeAt(index);
     state = Game.clone(state, teams: newTeams);
   }
@@ -167,8 +164,6 @@ class GameNotifier extends StateNotifier<Game> {
     int t = state.settings.turns - 1;
     print(words.length);
     List gameWords = getGameWords(words);
-    // state.gameWords.addAll(gameWords);
-    // print('gameword: ${state.gameWords}');
     state = Game.clone(
       state,
       remainingTurns: t,
@@ -184,14 +179,11 @@ class GameNotifier extends StateNotifier<Game> {
     state.settings.categories.forEach((element) {
       totalWeight += element.weight;
     });
-    // print('total weight' + totalWeight.toString());
     int totalWords = state.settings.turns * 5;
     List retL = [];
     for (int i = 0; i < state.settings.categories.length; i++) {
       final int categoryWeight = state.settings.categories[i].weight;
       int wpc = ((categoryWeight / totalWeight) * totalWords).round();
-      // print(
-      //     'wpc $wpc category weigth $categoryWeight total weight $totalWeight $totalWords');
       retL += getCategoryWords(words, state.settings.categories[i], wpc);
     }
     retL.shuffle();
@@ -264,7 +256,7 @@ class GameNotifier extends StateNotifier<Game> {
     state = Game.clone(state, currentTeam: currentTeam, nextTeam: nextTeam);
   }
 
-  // Add Tiebreaker
+  //TODO Add Tiebreaker
   Team findWinner() {
     var winner = state.teams[0];
     state.teams.forEach((element) {

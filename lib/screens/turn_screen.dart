@@ -44,10 +44,6 @@ class _SheetConsumer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     _endTurn() {
-      // context.read(gameProvider.notifier).submitAns(ans);
-      // context.read(pregameProvider.notifier).nextTurn();
-      // final turnEnded = watch(turnEndedProvider).state;
-      // if (turnEnded) {}
       bool gameEnded = ref.watch(gameEndedProvider.state).state;
       if (gameEnded) {
         Wakelock.disable();
@@ -105,7 +101,6 @@ class _SheetConsumer extends ConsumerWidget {
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              // crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Container(
                   width: 160,

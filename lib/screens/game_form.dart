@@ -150,12 +150,10 @@ class GameForm extends ConsumerWidget {
       ),
       sheet: FormButton(
         title: game.mode.toString().split('.').last.toUpperCase(),
-        // buttonColor: game.colorMap[GameMode.values.indexOf(game.mode)],
         buttonColor: game.mode.color,
         subtitle: game.mode.settingsScreenButton,
         callback: () {
           _formKey.currentState.save();
-          //Fix: submit form state instead of seprate values.
           if (_formKey.currentState.validate()) {
             print(_formKey.currentState.value);
             var formstate = _formKey.currentState.value;

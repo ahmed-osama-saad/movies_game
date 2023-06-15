@@ -98,14 +98,6 @@ const colorsMap = {
   "Grey": Color(0xffb2b2b2),
 };
 
-// const categoriesList = {
-//   'Films': Color(0xfffdc238),
-//   'Famous Person': Color(0xffbd7d99),
-//   'Science': Color(0xff70e6bf),
-//   'Countries': Color(0xff368bff),
-//   'Internet & Memes': Color(0xffff65a2),
-// };
-
 enum GameCategories {
   countries,
   famousPerson,

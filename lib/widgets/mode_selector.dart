@@ -17,7 +17,6 @@ class ModeSelector extends ConsumerWidget {
     }
 
     return SliverList(
-      // children: gameModes,
       delegate: SliverChildListDelegate(
         [
           Container(

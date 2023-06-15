@@ -20,13 +20,6 @@ class MyScaffold extends StatelessWidget {
             )
           ],
         ),
-        // drawer: Drawer(
-        //   child: ListView(
-        //     children: <Widget>[
-        //       Text('data'),
-        //     ],
-        //   ),
-        // ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: body,

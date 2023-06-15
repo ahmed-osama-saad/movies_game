@@ -27,7 +27,6 @@ class _AddTeamsConsumer extends ConsumerWidget {
     final Game game = ref.watch(gameProvider);
     void _onChanged(int i, String s) {
       if (_formKey.currentState.saveAndValidate()) {
-        // String name = _formKey.currentState.value['Team name $i'];
         ref.read(gameProvider.notifier).editTeam(i, s);
       }
     }
@@ -38,19 +37,14 @@ class _AddTeamsConsumer extends ConsumerWidget {
       for (int i = 0; i < game.teams.length; i++) {
         fieldsList[i] = FormBuilderTextField(
           name: 'Team name $i',
-          // key: ObjectKey(i.toString()),
           initialValue: '${game.teams[i].name}',
-          // controller: TextEditingController(text: game.teams[i].name),
           onChanged: (_) => _onChanged(i, _),
-          // valueTransformer: (text) => num.tryParse(text),
           validator: FormBuilderValidators.compose([
             FormBuilderValidators.max(context, 70),
           ]),
           keyboardType: TextInputType.name,
-          // textCapitalization: TextCapitalization.none,
         );
       }
-      // print(fieldsList);
       return fieldsList;
     }
 
@@ -105,7 +99,6 @@ class _SheetConsumer extends ConsumerWidget {
     final GameSettings game = ref.watch(pregameProvider);
     return FormButton(
         title: game.mode.toString().split('.').last.toUpperCase(),
-        // buttonColor: game.colorMap[GameMode.values.indexOf(game.mode)],
         buttonColor: game.mode.color,
         subtitle: '',
         callback: () {

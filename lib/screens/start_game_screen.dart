@@ -15,7 +15,6 @@ class StartGameScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final settings = ref.watch(pregameProvider);
     final game = ref.watch(gameProvider);
-    // watch(gameProvider.notifier).createGame(words);
     return MyScaffold(
       body: Container(
         child: Column(
@@ -82,7 +81,6 @@ class StartGameScreen extends ConsumerWidget {
           ref.refresh(dimmerTimerProvider);
           ref.watch(dimmerTimerProvider.notifier).state.reset();
           ref.watch(dimmerProvider.notifier).state = false;
-          // context.read(gameProvider.notifier).nextTurn();
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => TurnScreen()));
         },
